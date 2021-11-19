@@ -8,9 +8,7 @@
 
 .intro__container {
    padding: 0px 10px 0px 190px;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
+   @include center-between;
 
    @media (max-width: 1720px) {
       padding: 0px 0px 0px 150px;
@@ -34,9 +32,9 @@
       padding: 0px 0px 20px 0px;
    }
 
-   h1 {
-      width: 100%;
+   .intro-info__title {
       padding: 0px 0px 29px 0px;
+      width: 100%;
       @include adaptive-font (75, 16);
       font-weight: 700;
       line-height: calc(100 / 75);
@@ -46,7 +44,7 @@
       }
    }
 
-   p {
+   .intro-info__descr {
       padding: 0px 0px 97px 0px;
       @include adaptive-font (25, 16);
       line-height: calc(38 / 25);
@@ -54,25 +52,15 @@
 
       @media (max-width: 1024px) {
          padding: 0px 0px 20px 0px;
+         margin: 0 auto;
          width: 70%;
          display: block;
-         margin: 0 auto;
       }
-
    }
 
 
-   a {
-      display: inline-block;
+   .intro-info__btn {
       padding: 22px 41px;
-      @include adaptive-font (20, 16);
-      font-weight: 700;
-      line-height: calc(30 / 20);
-      letter-spacing: 0.03em;
-      color: $whiteColor;
-      background-color: $buttonColor;
-      border-radius: 20px;
-      transition: all 0.3s ease;
 
       &:hover {
          box-shadow: 0px 0px 30px $buttonColor;

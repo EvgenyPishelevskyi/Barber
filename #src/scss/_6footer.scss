@@ -8,9 +8,7 @@
 
    .footer__logo {
       padding: 0px 0px 56px 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include center;
       text-align: center;
       cursor: pointer;
 
@@ -36,10 +34,10 @@
       }
    }
 
-   p {
+   .footer__descr {
       padding: 0px 0px 47px 0px;
-      display: block;
       margin: 0 auto;
+      display: block;
       width: 40%;
       @include adaptive-font (25, 16);
       font-size: 25px;
@@ -53,19 +51,15 @@
    }
 
    .footer__social-list {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include center;
 
-      div {
+      .social-list__item {
          margin-right: 25px;
          width: 67px;
          height: 67px;
          background: #D3E5FF;
          border-radius: 100px;
-         display: flex;
-         justify-content: center;
-         align-items: center;
+         @include center;
          transition: all 0.3s ease;
 
          &:hover {

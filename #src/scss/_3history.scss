@@ -1,18 +1,16 @@
 .history {
    padding: 0px 0px 140px 0px;
 
-   @media (max-width: $md2 +px) {
+   @media (max-width: ($md2 +px)) {
       padding: 0px 0px 40px 0px;
-    }
+   }
 }
 
 .history__container {
-   max-width: 1782px;
-   margin: 0 auto;
    padding: 0px 25px 0px 15px;
-   display: flex;
-   justify-content: space-between;
-   align-items: flex-start;
+   margin: 0 auto;
+   max-width: 1782px;
+   @include start-between;
 
    @media (max-width: 1520px) {
       align-items: center;
@@ -23,16 +21,15 @@
       flex-direction: column-reverse;
       text-align: center;
    }
-
 }
 
 .history__pic {
-   flex: 0 1 56%;
    margin-right: 10px;
+   flex: 0 1 56%;
 
    @media (max-width: 1024px) {
-     padding: 20px 0px 0px 0px;
-     margin-right: 0px;
+      padding: 20px 0px 0px 0px;
+      margin-right: 0px;
    }
 
    img {
@@ -45,7 +42,7 @@
    padding: 0px 0px 0px 0px;
    flex: 0 1 36%;
 
-   h2 {
+   .history-info__title {
       padding: 112px 0px 80px 0px;
       @include adaptive-font (70, 16);
       font-weight: 700;
@@ -73,14 +70,13 @@
       }
 
       @media (max-width: 1024px) {
-        padding: 0px 0px 50px 0px;
+         padding: 0px 0px 50px 0px;
       }
 
 
-      p {
+      .history-info__descr{
          padding: 0px 0px 48px 0px;
          @include adaptive-font (25, 16);
-         font-size: 25px;
          line-height: calc(38 / 25);
          letter-spacing: 0.03em;
 
@@ -94,31 +90,23 @@
 
          @media (max-width: 1024px) {
             padding: 0px 0px 20px 0px;
+            margin: 0 auto;
             width: 70%;
             display: block;
-            margin: 0 auto;
          }
 
          @media (max-width: 780px) {
             width: 100%;
          }
       }
-
    }
 
-   a {
-      display: inline-block;
+   .history-info__btn {
       padding: 22px 41px;
-      @include adaptive-font (20, 16);
-      font-weight: 700;
-      line-height: calc(30 / 20);
-      letter-spacing: 0.03em;
-      color: $whiteColor;
-      background-color: $buttonColor;
-      border-radius: 20px;
-      transition:all 0.3s ease;
+      display: inline-block;
 
-      &:hover{
+
+      &:hover {
          box-shadow: 0px 0px 30px $buttonColor;
       }
    }

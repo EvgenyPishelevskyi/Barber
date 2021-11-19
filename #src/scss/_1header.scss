@@ -4,11 +4,9 @@
 
 .header__container {
    padding: 39px 20px 0px 20px;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
+   @include center-between;
 
-   @media (max-width: $md2 +px) {
+   @media (max-width: ($md2 +px)) {
       justify-content: space-around;
    }
 }
@@ -21,8 +19,7 @@
 }
 
 .header__logo {
-   display: flex;
-   align-items: center;
+   @include center;
    position: relative;
    top: -24px;
    cursor: pointer;
@@ -40,7 +37,7 @@
       }
    }
 
-   span {
+   .header-logo__name {
       font-size: 40px;
       font-weight: 700;
       line-height: 53px;
@@ -66,11 +63,11 @@ img {
       flex: 0 1 33.3%
    }
 
-   @media (max-width: $md2 +px) {
+   @media (max-width: ($md2 +px)) {
       display: none;
    }
 
-   li {
+   ._nav__item {
       margin-right: 20px;
       transition: all 0.3s ease;
 
@@ -84,12 +81,11 @@ img {
          color: #ffffff;
       }
 
-      a {
+      ._nav__link {
          padding: 0px 14px;
          @include adaptive-font (25, 16);
-         font-size: 25px;
-         font-weight: 500;
          line-height: calc(33 / 25);
+         font-weight: 500;
 
          &:hover {
             padding: 97px 14px 8px 14px;
@@ -103,25 +99,15 @@ img {
 }
 
 .header__icons {
-   display: flex;
-   align-items: center;
+   @include center;
 
-   @media (max-width: $md4 +px) {
+   @media (max-width: ($md4 +px)) {
       display: none;
    }
 
-
-   a {
-      display: inline-block;
-      margin-right: 35px;
+   ._icons_header__btn {
       padding: 23px 33px;
-      @include adaptive-font (20, 16);
-      font-weight: 700;
-      line-height: calc(30 / 20);
-      letter-spacing: 0.03em;
-      color: $whiteColor;
-      background-color: $buttonColor;
-      border-radius: 20px;
+      margin-right: 35px;
 
 
       &:hover {
@@ -132,42 +118,53 @@ img {
          margin-right: 0px;
       }
 
-      @media (max-width: $md3 +px) {
+      @media (max-width: ($md3 +px)) {
          display: none;
       }
    }
 
-   .profile {
+   ._icons_header__profile {
       margin-right: 72px;
 
       @media (max-width: 1300px) {
          margin-right: 20px;
       }
 
-      @media (max-width: $md2 +px) {
+      @media (max-width: ($md2 +px)) {
          margin-right: 50px;
       }
 
-      @media (max-width: $md3+px) {
+      @media (max-width: ($md3+px)) {
          margin-right: 20px;
       }
    }
 
-   .noti {
+   ._icons_header__noti {
       margin-right: 72px;
 
       @media (max-width: 1300px) {
          margin-right: 50px;
       }
 
-      @media (max-width: $md2 +px) {
+      @media (max-width:($md2 +px)) {
          margin-right: 50px;
       }
 
-      @media (max-width: $md3+px) {
+      @media (max-width: ($md3+px)) {
          margin-right: 0px;
       }
    }
+}
+
+.btn {
+   display: inline-block;
+   @include adaptive-font (20, 16);
+   font-weight: 700;
+   line-height: calc(30 / 20);
+   letter-spacing: 0.03em;
+   color: $whiteColor;
+   background-color: $buttonColor;
+   border-radius: 20px;
 }
 
 @keyframes rot {
